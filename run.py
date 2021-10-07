@@ -3,7 +3,7 @@ from EcommerceStore import create_app
 from flask import g
 from EcommerceStore.models import Category
 
-app = create_app()
+app = create_app(h)
 
 if __name__ == "__main__":
     app.jinja_env.globals['float'] = float
