@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content%}
+    <form class="form-group variant-section" method="POST" action="">
+        {{ form.hidden_tag() }}
+        <legend class="text-center mt-2">{{ current_user.name }} Store</legend>
+        <div class="form-group">
+            {{ form.store_name.label(class="form-control-label mb-2") }}
+            {% if form.store_name.errors %}
+            {{ form.store_name(class="form-control is-invalid mb-2") }}
+                <div class="invalid-feedback">
+                    {% for error in form.store_name.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.store_name(class="form-control mb-2")}}
+            {% endif %}
+        </div>
+        <div class="form-group mb-0 text-center">
+            {{ form.submit(class="btn btn-outline-dark mt-4") }}
+        </div>
+    </form>
+{% endblock content %}

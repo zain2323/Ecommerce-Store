@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content%}
+    <div class="content-section">
+        <form class="form-group" method="POST" action="">
+            {{ form.hidden_tag() }}
+            <legend class="text-center mt-5">Sign In</legend>
+            <fieldset class="form-group">
+                <div class="form-group">
+                    {{form.email.label(class="form-control-label mb-2")}}
+                    {% if form.email.errors %}
+                        {{form.email(class="form-control mb-2 is-invalid")}} 
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{form.email(class="form-control mb-2")}}       
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{form.password.label(class="form-control-label mb-2")}}
+                    {% if form.password.errors %}
+                        {{form.password(class="form-control mb-2 is-invalid")}} 
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{form.password(class="form-control mb-2")}}       
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{form.remember_me.label(class="form-check-label text-muted mb-2")}}
+                    {{form.remember_me(class="form-check-input mb-2")}}
+                </div>
+            </fieldset>
+            <div class="form-group mb-0 text-center">
+                {{ form.submit(class="btn btn-outline-dark mt-4") }}
+            </div>
+            <div class="text-center">
+                <small class="ml-1 mt-0 text-muted">New member?
+                    <a href="{{url_for('users.sign_up')}}" class="link-secondary">Sign Up</a>
+                </small>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

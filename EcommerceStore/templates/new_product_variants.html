@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content%}
+    <form class="form-group variant-section" method="POST" action="">
+        {{ form.hidden_tag() }}
+        <legend class="text-center mt-2">Add product attributes</legend>
+        <div class="form-group">
+            {{ form.variant_value.label(class="form-control-label mb-2") }}
+            {% if form.variant_value.errors %}
+            {{ form.variant_value(class="form-control is-invalid mb-2") }}
+                <div class="invalid-feedback">
+                    {% for error in form.variant_value.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.variant_value(class="form-control mb-2")}}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.sku.label(class="form-control-label mb-2") }}
+            {% if form.sku.errors %}
+            {{ form.sku(class="form-control is-invalid mb-2") }}
+                <div class="invalid-feedback">
+                    {% for error in form.sku.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.sku(class="form-control mb-2")}}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.price.label(class="form-control-label mb-2") }}
+            {% if form.price.errors %}
+            {{ form.price(class="form-control is-invalid mb-2") }}
+                <div class="invalid-feedback">
+                    {% for error in form.price.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.price(class="form-control mb-2")}}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.stock.label(class="form-control-label mb-2") }}
+            {% if form.stock.errors %}
+            {{ form.stock(class="form-control is-invalid mb-2") }}
+                <div class="invalid-feedback">
+                    {% for error in form.stock.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.stock(class="form-control mb-2")}}
+            {% endif %}
+        </div>
+        <div class="form-group mb-0 text-center">
+            <a href="{{ url_for('products.add_product_details', product=product, category=category, variant=variant, manufacturer=manufacturer, keywords=keywords, variant_value=variant_value, sku=sku, price=price, stock=stock, product_id=product_id) }}" class="btn btn-outline-dark mt-4 mr-1">Back</a>
+            {{ form.submit(class="btn btn-outline-dark mt-4") }}
+        </div>
+    </form>
+{% endblock content %}

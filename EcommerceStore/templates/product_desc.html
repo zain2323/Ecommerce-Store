@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content%}
+    <form class="form-group variant-section" method="POST" action="" enctype=multipart/form-data>
+        {{ form.hidden_tag() }}
+        {{ form.file }}
+        <legend class="text-center mt-2">Add product description</legend>
+        <div class="form-group">
+            {{ form.desc.label(class="form-control-label mb-2") }}
+            {% if form.desc.errors %}
+            {{ form.desc(class="form-control is-invalid mb-2") }}
+                <div class="invalid-feedback">
+                    {% for error in form.desc.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.desc(class="form-control mb-2")}}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.img.label(class="form-control-label mb-2") }}
+            {% if form.img.errors %}
+            {{ form.img(class="form-control is-invalid mb-2") }}
+                <div class="invalid-feedback">
+                    {% for error in form.img.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.img(class="form-control mb-2")}}
+            {% endif %}
+        </div>
+        <div class="form-group mb-0 text-center">
+            <a href="{{ url_for('products.add_product_variants', product=product, category=category, variant=variant, manufacturer=manufacturer, keywords=keywords, variant_value=variant_value, sku=sku, price=price, stock=stock, product_id=product_id) }}" class="btn btn-outline-dark mt-4 mr-1">Back</a>
+            {{ form.submit(class="btn btn-outline-dark mt-4") }}
+        </div>
+    </form>
+{% endblock content %}

@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block content%}
+    <div class="container">
+    <form class="form-group" method="POST" action="" style="margin-left: 10%; margin-right: 10%;">
+        {{ form.hidden_tag() }}
+        <legend class="text-center mt-5">List a new product</legend>
+        <div class="form-group">
+            {{ form.name.label(class="form-control-label mb-2") }}
+            {% if form.name.errors %}
+            {{ form.name(class="form-control is-invalid mb-3") }}
+                <div class="invalid-feedback">
+                    {% for error in form.name.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.name(class="form-control mb-3")}}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.keywords.label(class="form-control-label mb-2") }}
+            {% if form.keywords.errors %}
+            {{ form.keywords(class="form-control is-invalid mb-3") }}
+                <div class="invalid-feedback">
+                    {% for error in form.keywords.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.keywords(class="form-control mb-3")}}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.category.label(class="form-control-label mb-2") }}
+            {% if form.category.errors %}
+            {{ form.category(class="form-control is-invalid mb-3") }}
+                <div class="invalid-feedback">
+                    {% for error in form.category.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {% set hello = 'helloworld'%}
+                {{ form.category(class="form-control form-select mb-3") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.variant.label(class="form-control-label mb-2") }}
+            {% if form.variant.errors %}
+            {{ form.variant(class="form-control is-invalid mb-3") }}
+                <div class="invalid-feedback">
+                    {% for error in form.variant.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.variant(class="form-control form-select mb-3")}}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.manufacturer.label(class="form-control-label mb-2") }}
+            {% if form.manufacturer.errors %}
+            {{ form.manufacturer(class="form-control is-invalid mb-3") }}
+                <div class="invalid-feedback">
+                    {% for error in form.manufacturer.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.manufacturer(class="form-control mb-3")}}
+            {% endif %}
+        </div>
+        <div class="form-group mb-1 text-center">
+            {{ form.submit(class="btn btn-outline-dark mt-4") }}
+        </div
+    </form>
+    </div>
+    <script>
+         let category_id = '{{ form.category.data }}';
+         category = document.getElementById("category")
+         category.selectedIndex = category_id - 1
+         
+         let variant_id = '{{ form.variant.data }}'
+         variant = document.getElementById("variant")
+         variant.selectedIndex = variant_id - 1
+    </script>
+{% endblock content %}

@@ -1,0 +1,3 @@
+class Config:
+    SECRET_KEY = "29bfb94270f27ef0038180a0489023fcd322b9d5ac4984c6148af290f4bd4a26"
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///data.db'

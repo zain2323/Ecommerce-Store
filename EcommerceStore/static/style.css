@@ -1,0 +1,166 @@
+.search-bar {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    border-radius: 1rem;
+    border: 1.8px solid;
+}
+
+.search-bar:focus {
+    box-shadow: 0 0 0 0.25rem rgba(187, 187, 187, 0.5);
+    transition-duration: 0.2s;
+    border: None
+}
+
+.search-button {
+    border-radius: 0.5rem;
+    color: black;
+    background-color: white;
+    transition-duration: 0.2s;
+    border-color: black;
+    border: 1.8px solid;
+}
+
+.search-button:hover {
+    background-color: rgb(187, 187, 187);
+    border: None
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 0.25rem rgba(187, 187, 187, 0.5);
+    border: None
+}
+
+.btn-outline-dark:hover {
+    background-color: rgba(187, 187, 187, 0.5);
+    color: black;
+}
+
+.li {
+    transition-duration: 0.2s;
+    border-radius: 0.7rem;
+    border: None;
+    display: inline-block;
+    color: black;
+    padding: 4;
+}
+
+
+.li:hover{
+    background-color: rgba(187, 187, 187, 0.5);
+    transition-duration: 0.2s;
+    border-radius: 0.7rem;
+    display: inline-block;
+    color: black;
+    padding: 4;
+}
+
+.li:focus {
+    box-shadow: 0 0 0 0.25rem rgba(187, 187, 187, 0.5);
+    border: None;
+    border-radius: 0.7rem;
+    display: inline-block;
+    padding: 4;
+}
+
+
+
+.card {
+    border: none;
+}
+
+.card:hover {
+    box-shadow: 0 0 0 0.25rem rgba(187, 187, 187, 0.5);
+    border: None;
+    border-radius: 0.7rem;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+
+
+}
+
+.product-img {
+    height: 200px;
+    width: 100%;
+    margin-right: 20px;
+    margin-bottom: 16px;
+    border-radius: 0.7rem;
+  }
+
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: 1px solid rgba(187, 187, 187, 0.5);
+}
+
+.variant-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: 1px solid rgba(187, 187, 187, 0.5);
+}
+
+.form-check-input{
+    margin-left: 2px;
+}
+
+.form-check-input:checked
+{
+    background-color: rgb(187, 187, 187);
+    border-color: black;
+    box-shadow: 0 0 0 0.25rem rgba(187, 187, 187, 0.5);
+}
+
+.form-check-input:focus
+{
+    border-color: black;
+    box-shadow: 0 0 0 0.25rem rgba(187, 187, 187, 0.5);
+}
+
+.product-img-thumbnail {
+    height: 550px;
+    border-radius: 0.7rem;
+  }
+
+.cart-img
+{
+    height: 170px;
+    width: 210px;
+    border-radius: 0.7rem;
+}
+
+.dropdown-menu
+{
+    background-color: #f8f9fa;
+}
+
+.bt {
+    border: None;
+}
+
+.bt:hover
+{
+    box-shadow: 0 0 0 0.25rem rgba(187, 187, 187, 0.5);
+    background-color: rgba(187, 187, 187, 0.5);
+    border-radius: 0.7rem;
+}
+
+.line-height 
+{
+    line-height: 1.7;
+}
+
+.button 
+{
+    background-color: white;
+}

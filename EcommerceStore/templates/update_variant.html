@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content%}
+    <form class="form-group variant-section" method="POST" action="">
+        {{ form.hidden_tag() }}
+        <legend class="text-center mt-2">Update Variant</legend>
+        <div class="form-group">
+            {{ form.variant_name.label(class="form-control-label mb-2") }}
+            {% if form.variant_name.errors %}
+            {{ form.variant_name(class="form-control is-invalid mb-2") }}
+                <div class="invalid-feedback">
+                    {% for error in form.variant_name.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.variant_name(class="form-control mb-2")}}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.updated_variant_name.label(class="form-control-label mb-2") }}
+            {% if form.updated_variant_name.errors %}
+            {{ form.updated_variant_name(class="form-control is-invalid mb-2") }}
+                <div class="invalid-feedback">
+                    {% for error in form.updated_variant_name.errors%}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+            {% else %}
+                {{ form.updated_variant_name(class="form-control mb-2")}}
+            {% endif %}
+        </div>
+        <div class="form-group mb-0 text-center">
+            {{ form.submit(class="btn btn-outline-dark mt-4") }}
+        </div>
+    </form>
+{% endblock content %}

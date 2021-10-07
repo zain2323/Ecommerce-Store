@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+    <!-- Products -->
+    <section class="p-5">
+        <div class="container">
+          <div class="row text-center g-4 mb-3">
+            {% for product in products %}
+              <div class="col-md-3">
+                <div class="card bg-light text-dark">
+                  <img src={{ product[3] }} class="card-img-top bg-light product-img">
+                    <div class="card-body text-center">
+                        <p class="card-text lead mb-0">
+                            {{ product[1].title() }}
+                        </p>
+                        <a href="{{ url_for('products.product', product_id=product[5]) }}" class="stretched-link"></a>
+                        <p class="text-muted h6 mt-1">
+                          <small>{{product[4].title().replace(" ", "")}}</small>
+                      </p>
+                        <p class="fw-bold">USD {{ round(product[2], 2) }}</p>
+                    </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+  </section>
+{% endblock content %}
