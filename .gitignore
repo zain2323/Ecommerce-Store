@@ -1,3 +1,5 @@
 venv
 __pycache__/
 __pycache__
+EcommerceStore/__pycache__
+EcommerceStore/data.db
