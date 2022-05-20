@@ -1,7 +1,7 @@
 from EcommerceStore.models import Variant, Category, Store, User
 from flask_wtf import FlaskForm
 from wtforms import StringField
-from wtforms.fields.core import BooleanField,  SelectField
+from wtforms.fields import BooleanField,  SelectField
 from wtforms.fields.simple import PasswordField, SubmitField
 from wtforms.validators import DataRequired, EqualTo, Length, Email, ValidationError
 from flask_login.utils import current_user

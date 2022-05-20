@@ -1,7 +1,7 @@
 from EcommerceStore.models import ProductVariants
 from flask_wtf import FlaskForm
 from wtforms import StringField
-from wtforms.fields.core import FloatField, IntegerField, SelectField
+from wtforms.fields import FloatField, IntegerField, SelectField
 from wtforms.fields.simple import SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Length, ValidationError
 from flask_wtf.file import FileField, FileAllowed
